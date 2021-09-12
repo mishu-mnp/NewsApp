@@ -26,7 +26,7 @@ const ScrollButton = () => {
 
     return (
         <>
-            <button type="button" class="btn btn-dark" onClick={scrollToTop} style={{ display: visible ? 'inline' : 'none' }}>ScrollToTop</button>
+            <button type="button" className="btn btn-dark" onClick={scrollToTop} style={{ display: visible ? 'inline' : 'none' }}>ScrollToTop</button>
         </>
     );
 }
