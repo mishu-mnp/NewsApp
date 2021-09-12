@@ -8,7 +8,7 @@ export class News extends Component {
 
     static defaultProps = {
         country: 'in',
-        pageSize: 9,
+        pageSize: 5,
         category: 'general',
         apiKey: 'e1841b7b047944d1b5462e3cb101e664',
         badgeColor: 'danger'
@@ -59,7 +59,7 @@ export class News extends Component {
     }
 
     handlePrevClick = async () => {
-        console.log("Previous")
+        // console.log("Previous")
         // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
         // this.setState({ loading: true });
         // let data = await fetch(url);
@@ -75,7 +75,7 @@ export class News extends Component {
     }
 
     handleNextClick = async () => {
-        console.log("Next")
+        // console.log("Next")
         if (!(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize))) {
             // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
             // this.setState({ loading: true });
