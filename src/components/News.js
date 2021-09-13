@@ -12,7 +12,7 @@ const News = (props) => {
     const [page, setPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
 
-    // document.title = `Coders News - ${this.capitalize(this.props.category)}`
+
 
 
     const updateNews = async () => {
@@ -32,27 +32,15 @@ const News = (props) => {
     }
 
     useEffect(() => {
+        document.title = `Coders News - ${capitalize(props.category)}`
         updateNews();
+        // eslint-disable-next-line 
     }, [])
 
 
-
-    // const handlePrevClick = async () => {
-    //     setPage(page - 1)
-    //     updateNews()
-    // }
-
-    // const handleNextClick = async () => {
-
-    //     if (!(page + 1 > Math.ceil(totalResults / props.pageSize))) {
-    //         setPage(page + 1)
-    //         updateNews()
-    //     }
-    // }
-
     const fetchMoreData = async () => {
+        let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page + 1}&pageSize=${props.pageSize}`;
         setPage(page + 1)
-        let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json()
         setArticles(articles.concat(parsedData.articles))
