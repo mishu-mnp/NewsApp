@@ -37,6 +37,7 @@ const News = (props) => {
         let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page + 1}&pageSize=${props.pageSize}`;
         setPage(page + 1)
         let data = await fetch(url);
+        console.log(data)
         let parsedData = await data.json()
         setArticles(articles.concat(parsedData.articles))
         setTotalResults(parsedData.totalResults)
@@ -44,8 +45,8 @@ const News = (props) => {
 
     return (
         <>
-            <div className="header" style={{ margin: '2.5rem 0rem' }}>
-                <h1 className=" my-3 mb-3 text-center">Coders News - Top {capitalize(props.category)} Headlines</h1>
+            <div className="header" style={{ margin: '3.5rem 0rem' }}>
+                <h1 className=" my-5 mb-3 text-center">Coders News - Top {capitalize(props.category)} Headlines</h1>
             </div>
             {loading && <Spinner />}
             <InfiniteScroll

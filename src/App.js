@@ -12,7 +12,7 @@ import {
 
 const App = () => {
   let pageSize = 9
-  const apiKey = process.env.REACT_APP_NEWS_API
+  const apiKey = 'e1841b7b047944d1b5462e3cb101e664';
   return (
     <div>
       <Router>
