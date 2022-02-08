@@ -54,7 +54,7 @@ const News = (props) => {
                 next={fetchMoreData}
                 hasMore={articles.length !== totalResults}
                 loader={<Spinner />}>
-                <div className="container">
+                <div className='container'>
                     <div className="row">
                         {articles.map((element) => {
                             return <div className="col-md-4 mb-4" key={element.url} style={{ paddingTop: '12px' }}>
@@ -70,7 +70,7 @@ const News = (props) => {
 
 
 News.defaultProps = {
-    country: 'in',
+    country: 'us',
     pageSize: 5,
     category: 'general',
     badgeColor: 'danger'
