@@ -7,6 +7,7 @@
 
 # env
 /config
+.env
 
 # testing
 /coverage
